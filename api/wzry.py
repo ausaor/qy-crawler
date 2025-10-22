@@ -86,3 +86,66 @@ async def crawler_heros():
         "inserted_count": inserted_count,
         "updated_count": updated_count
     }
+
+@wzry_api.get("/crawler/heroDetail")
+async def crawler_hero_detail():
+    """
+    爬取英雄详情
+    """
+    # 获取所有未爬取英雄列表
+    hero_list = await HeroInfo.filter(is_crawl=False, category="王者荣耀", id__in=[14, 15, 16])
+    print(f'待爬取英雄数量：{len(hero_list)}')
+    if not hero_list:
+        return {
+            "message": "没有待爬取英雄"
+        }
+
+    # 设置 ChromeDriver 路径（需自行下载）
+    driver_path = 'F:/software/chromedriver/chromedriver-win64/chromedriver.exe'  # 请替换为你的 chromedriver 实际路径
+    service = Service(executable_path=driver_path)
+    driver = webdriver.Chrome(service=service)
+
+    try:
+        for hero in hero_list:
+            url = hero.hero_detail_url
+            try:
+                driver.get(url)
+                # 显式等待：等待英雄详情页面加载完成
+                wait = WebDriverWait(driver, 10)
+                hero_skins = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "pic-pf")))
+
+                # 获取英雄皮肤头像列表
+                skin_avatars = hero_skins.find_elements(By.TAG_NAME, "li")
+                for avatar in skin_avatars:
+                    # 获取英雄皮肤头像链接 例：https://game.gtimg.cn/images/yxzj/img201606/heroimg/564/564-smallskin-1.jpg
+                    img = avatar.find_element(By.TAG_NAME, "img")
+                    avatar_img = img.get_attribute("src")
+                    print(f'英雄[{hero.hero_name}]皮肤头像链接：{avatar_img}')
+
+                    # 获取皮肤名称
+                    skin_name = img.get_attribute("data-title")
+                    print(f'英雄[{hero.hero_name}]皮肤名称：{skin_name}')
+
+                    # 获取皮肤详情链接 例：https://game.gtimg.cn/images/yxzj/img201606/skin/hero-info/564/564-bigskin-6.jpg
+                    skin_url = 'https:' + img.get_attribute("data-imgname")
+                    print(f'英雄[{hero.hero_name}]皮肤详情链接：{skin_url}')
+
+                    # 如何hero.hero_id是null,根据皮肤头像链接获取英雄id
+                    if hero.hero_id is None:
+                        hero.hero_id = avatar_img.split("/")[-1].split("-")[0]
+                        print(f'英雄[{hero.hero_name}]英雄id：{hero.hero_id}')
+                        
+                # 更新英雄信息
+                await HeroInfo.filter(id=hero.id).update(hero_id=hero.hero_id, is_crawl=True, update_time=datetime.now())
+                print(f'英雄[{hero.hero_name}]信息更新成功')
+            except Exception as e:
+                print(f'处理英雄[{hero.hero_name}]时发生异常: {e}')
+                continue
+    finally:
+        driver.quit()
+        print("浏览器已关闭")
+        
+    return {
+        "message": "爬取完成"
+    }
+
