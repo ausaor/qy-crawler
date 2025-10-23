@@ -1,3 +1,5 @@
+import time
+
 from fastapi import APIRouter
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -89,12 +91,12 @@ async def crawler_heros():
     }
 
 @wzry_api.get("/crawler/heroDetail")
-async def crawler_hero_detail():
+async def crawler_hero_detail(id: int):
     """
     爬取英雄详情(多线程版本)
     """
     # 获取所有未爬取英雄列表, id小于15
-    hero_list = await HeroInfo.filter(is_crawl=False, category="王者荣耀", id__lt=45)
+    hero_list = await HeroInfo.filter(is_crawl=False, category="王者荣耀", id__lt=id)
     print(f'待爬取英雄数量：{len(hero_list)}')
     if not hero_list:
         return {
@@ -110,6 +112,8 @@ async def crawler_hero_detail():
     failed_count = 0
     
     def process_hero(hero):
+        # 线程停止1秒
+        time.sleep(1)
         """处理单个英雄的函数，在线程中执行"""
         # 每个线程需要自己的webdriver实例
         service = Service(executable_path=driver_path)
