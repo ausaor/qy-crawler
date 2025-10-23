@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 
-from orm.models import HeroInfo
+from orm.models import HeroInfo, HeroSkin
 wzry_api = APIRouter()
 
 @wzry_api.get("/crawler/heros")
@@ -130,10 +130,33 @@ async def crawler_hero_detail():
                     skin_url = 'https:' + img.get_attribute("data-imgname")
                     print(f'英雄[{hero.hero_name}]皮肤详情链接：{skin_url}')
 
-                    # 如何hero.hero_id是null,根据皮肤头像链接获取英雄id
+                    # 如果hero.hero_id是null,根据皮肤头像链接获取英雄id
                     if hero.hero_id is None:
                         hero.hero_id = avatar_img.split("/")[-1].split("-")[0]
                         print(f'英雄[{hero.hero_name}]英雄id：{hero.hero_id}')
+
+                    # 创建英雄皮肤数据，判断是否已存在
+                    skin_obj = await HeroSkin.get_or_none(hero_id=hero.hero_id, category="王者荣耀", skin_name=skin_name, hero_name=hero.hero_name)
+                    if skin_obj is None:
+                        # 如果皮肤不存在，则创建新记录
+                        await HeroSkin.create(
+                            hero_id=hero.hero_id,
+                            hero_name=hero.hero_name,
+                            skin_name=skin_name,
+                            skin_url=skin_url,
+                            skin_profile_url=avatar_img,
+                            category="王者荣耀",
+                            create_time=datetime.now(),
+                            update_time=datetime.now()
+                        )
+                        print(f'英雄[{hero.hero_name}]皮肤[{skin_name}]创建成功')
+                    else:
+                        # 如果皮肤已存在，更新记录
+                        skin_obj.skin_url = skin_url
+                        skin_obj.skin_profile_url = avatar_img
+                        skin_obj.update_time = datetime.now()
+                        await skin_obj.save()
+                        print(f'英雄[{hero.hero_name}]皮肤[{skin_name}]更新成功')
                         
                 # 更新英雄信息
                 await HeroInfo.filter(id=hero.id).update(hero_id=hero.hero_id, is_crawl=True, update_time=datetime.now())
