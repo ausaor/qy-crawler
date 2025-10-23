@@ -178,7 +178,7 @@ async def crawler_hero_detail(id: int):
             
             # 处理完成的任务
             for future in as_completed(future_to_hero):
-                hero_id, hero_hero_id, skin_data_list, error = future.result()
+                t_id, hero_id, skin_data_list, error = future.result()
                 
                 if error:
                     failed_count += 1
@@ -189,8 +189,8 @@ async def crawler_hero_detail(id: int):
                 all_skin_data.extend(skin_data_list)
                 # 记录需要更新的英雄信息
                 heroes_to_update.append({
-                    'id': hero_id,
-                    'hero_id': hero_hero_id
+                    'id': t_id,
+                    'hero_id': hero_id
                 })
                 
     except Exception as e:
