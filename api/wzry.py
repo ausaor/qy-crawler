@@ -1,4 +1,7 @@
+from orm.models import HeroInfo, HeroSkin
 import time
+import threading
+import queue
 
 from fastapi import APIRouter
 from selenium import webdriver
@@ -8,9 +11,18 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import logging
 
-from orm.models import HeroInfo, HeroSkin
+# 配置日志，方便查看后台爬虫运行状态
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(threadName)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+
 wzry_api = APIRouter()
+
 
 @wzry_api.get("/crawler/heros")
 async def crawler_heros():
@@ -89,6 +101,7 @@ async def crawler_heros():
         "inserted_count": inserted_count,
         "updated_count": updated_count
     }
+
 
 @wzry_api.get("/crawler/heroDetail")
 async def crawler_hero_detail(id: int):
@@ -268,3 +281,157 @@ async def crawler_hero_detail(id: int):
         "skins_updated": updated_skins
     }
 
+
+async def crawler_worker(queue, thread_id):
+    """爬虫工作线程：从队列获取URL并爬取内容"""
+    driver = None
+    # 设置 ChromeDriver 路径（需自行下载）
+    driver_path = 'F:/software/chromedriver/chromedriver-win64/chromedriver.exe'  # 请替换为你的 chromedriver 实际路径
+
+    try:
+        """处理单个英雄的函数，在线程中执行"""
+        # 每个线程需要自己的webdriver实例
+        service = Service(executable_path=driver_path)
+        driver = webdriver.Chrome(service=service)
+        logger.info(f"爬虫线程 {thread_id} 初始化完成")
+
+        while True:
+            hero = queue.get(timeout=5)
+            if hero is None:  # 结束信号
+                break
+
+            logger.info(f"爬虫线程 {thread_id} 开始爬取: {hero.hero_name}")
+
+            driver.get(hero.hero_detail_url)
+
+            # 显式等待：等待英雄详情页面加载完成
+            wait = WebDriverWait(driver, 10)
+            hero_skins = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "pic-pf")))
+
+            # 获取英雄皮肤头像列表
+            skin_avatars = hero_skins.find_elements(By.TAG_NAME, "li")
+            skin_data_list = []
+
+            for avatar in skin_avatars:
+                # 获取英雄皮肤头像链接 例：https://game.gtimg.cn/images/yxzj/img201606/heroimg/564/564-smallskin-1.jpg
+                img = avatar.find_element(By.TAG_NAME, "img")
+                avatar_img = img.get_attribute("src")
+                print(f'英雄[{hero.hero_name}]皮肤头像链接：{avatar_img}')
+
+                # 获取皮肤名称
+                skin_name = img.get_attribute("data-title")
+                print(f'英雄[{hero.hero_name}]皮肤名称：{skin_name}')
+
+                # 获取皮肤详情链接 例：https://game.gtimg.cn/images/yxzj/img201606/skin/hero-info/564/564-bigskin-6.jpg
+                skin_url = 'https:' + img.get_attribute("data-imgname")
+                print(f'英雄[{hero.hero_name}]皮肤详情链接：{skin_url}')
+
+                # 如果hero.hero_id是null,根据皮肤头像链接获取英雄id
+                if hero.hero_id is None:
+                    hero.hero_id = avatar_img.split("/")[-1].split("-")[0]
+                    print(f'英雄[{hero.hero_name}]英雄id：{hero.hero_id}')
+
+                # 判断是否已存在，如果已存在则跳过
+                skin_obj = await HeroSkin.get_or_none(hero_id=hero.hero_id, category="王者荣耀", skin_name=skin_name)
+                if skin_obj:
+                    continue
+                else:
+                    await HeroSkin.create(
+                        hero_id=hero.hero_id,
+                        hero_name=hero.hero_name,
+                        skin_name=skin_name,
+                        skin_url=skin_url,
+                        skin_profile_url=avatar_img,
+                        category="王者荣耀"
+                    )
+
+                # skin_data_list.append({
+                #     'hero_id': hero.hero_id,
+                #     'hero_name': hero.hero_name,
+                #     'avatar_img': avatar_img,
+                #     'skin_name': skin_name,
+                #     'skin_url': skin_url,
+                #     'category': "王者荣耀"
+                # })
+
+            # 更新英雄数据
+            hero.is_crawl = True
+            hero.update_time = datetime.now()
+            await hero.save()
+            logger.info(f"爬虫线程 {thread_id} 爬取结果: {hero.hero_name}")
+
+            queue.task_done()
+            time.sleep(1)  # 控制爬取速度
+
+    except queue.Empty:
+        logger.info(f"爬虫线程 {thread_id} 无任务可执行")
+    except Exception as e:
+        logger.error(f"爬虫线程 {thread_id} 出错: {str(e)}", exc_info=True)
+    finally:
+        if driver:
+            driver.quit()
+        logger.info(f"爬虫线程 {thread_id} 已关闭")
+
+
+def background_crawl_task(hero_list, thread_count):
+    """后台总控任务：创建队列和爬虫线程，分配任务"""
+    logger.info(f"开始后台爬虫任务，共 {len(hero_list)} 个英雄，使用 {thread_count} 个线程")
+
+    # 创建任务队列
+    task_queue = queue.Queue()
+    for hero in hero_list:
+        task_queue.put(hero)
+
+    # 启动爬虫线程
+    threads = []
+    for i in range(thread_count):
+        t = threading.Thread(
+            target=crawler_worker,
+            args=(task_queue, i),
+            name=f"Crawler-{i}"
+        )
+        t.start()
+        threads.append(t)
+
+    # 等待所有URL处理完成
+    task_queue.join()
+    logger.info("所有URL爬取完成")
+
+    # 发送结束信号给所有线程
+    for _ in range(thread_count):
+        task_queue.put(None)
+
+    # 等待所有线程退出
+    for t in threads:
+        t.join()
+    logger.info("所有爬虫线程已退出，后台任务结束")
+
+@wzry_api.get("/crawler/heroDetailByBg")
+async def crawler_hero_detail_by_bg(id: int):
+    """
+    通过后台线程爬取英雄详情数据
+    """
+    # 启动后台总控线程（非阻塞，接口立即返回）
+    hero_list = await HeroInfo.filter(is_crawl=False, category="王者荣耀", id__lt=id)
+    print(f'待爬取英雄数量：{len(hero_list)}')
+    if not hero_list:
+        return {
+            "message": "没有待爬取英雄"
+        }
+
+    bg_thread = threading.Thread(
+        target=background_crawl_task,
+        args=(hero_list, 3),
+        name="Background-Crawl-Controller"
+    )
+    bg_thread.daemon = True  # 进程退出时自动结束后台线程
+    bg_thread.start()
+
+    return {
+        "status": "success",
+        "message": "爬虫任务已在后台启动",
+        "task_info": {
+            "url_count": len(hero_list),
+            "thread_count": 3
+        }
+    }
