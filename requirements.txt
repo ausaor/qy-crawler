@@ -1,0 +1,4 @@
+fastapi==0.119.1
+selenium==4.37.0
+tortoise==0.1.1
+uvicorn==0.38.0
