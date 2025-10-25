@@ -286,7 +286,7 @@ async def crawler_hero_detail(id: int):
     }
 
 
-def crawler_worker(queue, thread_id):
+def crawler_worker(queue, thread_id, result_queue):
     """爬虫工作线程：从队列获取URL并爬取内容"""
     driver = None
     # 设置 ChromeDriver 路径（需自行下载）
@@ -335,39 +335,21 @@ def crawler_worker(queue, thread_id):
                     hero.hero_id = avatar_img.split("/")[-1].split("-")[0]
                     print(f'英雄[{hero.hero_name}]英雄id：{hero.hero_id}')
 
-                # 判断是否已存在，如果已存在则跳过
-                # 在同步函数中不能使用 await，所以我们需要使用同步方式处理数据库操作
-                # 这里需要修改为同步方式调用数据库
-                skin_obj = HeroSkin.filter(hero_id=hero.hero_id, category="王者荣耀", skin_name=skin_name).first()
-                if skin_obj:
-                    continue
-                else:
-                    HeroSkin.create(
-                        hero_id=hero.hero_id,
-                        hero_name=hero.hero_name,
-                        skin_name=skin_name,
-                        skin_url=skin_url,
-                        skin_profile_url=avatar_img,
-                        category="王者荣耀"
-                    )
+                skin_data_list.append({
+                    'hero_id': hero.hero_id,
+                    'hero_name': hero.hero_name,
+                    'avatar_img': avatar_img,
+                    'skin_name': skin_name,
+                    'skin_url': skin_url,
+                    'category': "王者荣耀"
+                })
 
-                # skin_data_list.append({
-                #     'hero_id': hero.hero_id,
-                #     'hero_name': hero.hero_name,
-                #     'avatar_img': avatar_img,
-                #     'skin_name': skin_name,
-                #     'skin_url': skin_url,
-                #     'category': "王者荣耀"
-                # })
-
-            # 更新英雄数据
-            hero.is_crawl = True
-            hero.update_time = datetime.now()
-            # 使用同步方式保存
-            hero.__class__.filter(id=hero.id).update(
-                is_crawl=True,
-                update_time=hero.update_time
-            )
+            # 将结果放入结果队列
+            result_queue.put({
+                'hero': hero,
+                'skin_data_list': skin_data_list
+            })
+            
             logger.info(f"爬虫线程 {thread_id} 爬取结果: {hero.hero_name}")
 
             queue.task_done()
@@ -387,6 +369,8 @@ def background_crawl_task(hero_list, thread_count):
 
     # 创建任务队列
     task_queue = queue.Queue()
+    result_queue = queue.Queue()
+    
     for hero in hero_list:
         task_queue.put(hero)
 
@@ -395,7 +379,7 @@ def background_crawl_task(hero_list, thread_count):
     for i in range(thread_count):
         t = threading.Thread(
             target=crawler_worker,
-            args=(task_queue, i),
+            args=(task_queue, i, result_queue),
             name=f"Crawler-{i}"
         )
         t.start()
@@ -412,7 +396,15 @@ def background_crawl_task(hero_list, thread_count):
     # 等待所有线程退出
     for t in threads:
         t.join()
+        
+    # 收集所有结果
+    results = []
+    while not result_queue.empty():
+        results.append(result_queue.get())
+        
     logger.info("所有爬虫线程已退出，后台任务结束")
+    
+    return results
 
 
 @wzry_api.get("/crawler/heroDetailByBg")
@@ -428,13 +420,48 @@ async def crawler_hero_detail_by_bg():
             "message": "没有待爬取英雄"
         }
 
-    bg_thread = threading.Thread(
-        target=background_crawl_task,
-        args=(hero_list, 3),
-        name="Background-Crawl-Controller"
-    )
-    bg_thread.daemon = True  # 进程退出时自动结束后台线程
-    bg_thread.start()
+    # 在后台线程中执行爬虫任务
+    async def run_crawler_in_thread():
+        results = background_crawl_task(hero_list, 3)
+        # 在这里执行数据库操作，使用 await 方式
+        
+        # 更新英雄数据和皮肤数据
+        for result in results:
+            hero = result['hero']
+            skin_data_list = result['skin_data_list']
+            
+            # 更新英雄状态
+            await HeroInfo.filter(id=hero.id).update(
+                is_crawl=True,
+                update_time=datetime.now(),
+                hero_id=hero.hero_id
+            )
+            
+            # 插入皮肤数据
+            for skin_data in skin_data_list:
+                # 检查皮肤是否已存在
+                existing_skin = await HeroSkin.filter(
+                    hero_id=skin_data['hero_id'],
+                    category=skin_data['category'],
+                    skin_name=skin_data['skin_name']
+                ).first()
+                
+                if not existing_skin:
+                    await HeroSkin.create(
+                        hero_id=skin_data['hero_id'],
+                        hero_name=skin_data['hero_name'],
+                        skin_name=skin_data['skin_name'],
+                        skin_url=skin_data['skin_url'],
+                        skin_profile_url=skin_data['avatar_img'],
+                        category=skin_data['category'],
+                        create_time=datetime.now(),
+                        update_time=datetime.now()
+                    )
+    
+    import asyncio
+    # 在现有的事件循环中创建任务
+    loop = asyncio.get_event_loop()
+    loop.create_task(run_crawler_in_thread())
 
     return {
         "status": "success",
