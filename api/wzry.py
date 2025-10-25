@@ -2,6 +2,10 @@ from orm.models import HeroInfo, HeroSkin
 import time
 import threading
 import queue
+import asyncio
+import requests
+import json
+import os
 
 from fastapi import APIRouter
 from selenium import webdriver
@@ -282,7 +286,7 @@ async def crawler_hero_detail(id: int):
     }
 
 
-async def crawler_worker(queue, thread_id):
+def crawler_worker(queue, thread_id):
     """爬虫工作线程：从队列获取URL并爬取内容"""
     driver = None
     # 设置 ChromeDriver 路径（需自行下载）
@@ -332,11 +336,13 @@ async def crawler_worker(queue, thread_id):
                     print(f'英雄[{hero.hero_name}]英雄id：{hero.hero_id}')
 
                 # 判断是否已存在，如果已存在则跳过
-                skin_obj = await HeroSkin.get_or_none(hero_id=hero.hero_id, category="王者荣耀", skin_name=skin_name)
+                # 在同步函数中不能使用 await，所以我们需要使用同步方式处理数据库操作
+                # 这里需要修改为同步方式调用数据库
+                skin_obj = HeroSkin.filter(hero_id=hero.hero_id, category="王者荣耀", skin_name=skin_name).first()
                 if skin_obj:
                     continue
                 else:
-                    await HeroSkin.create(
+                    HeroSkin.create(
                         hero_id=hero.hero_id,
                         hero_name=hero.hero_name,
                         skin_name=skin_name,
@@ -357,14 +363,16 @@ async def crawler_worker(queue, thread_id):
             # 更新英雄数据
             hero.is_crawl = True
             hero.update_time = datetime.now()
-            await hero.save()
+            # 使用同步方式保存
+            hero.__class__.filter(id=hero.id).update(
+                is_crawl=True,
+                update_time=hero.update_time
+            )
             logger.info(f"爬虫线程 {thread_id} 爬取结果: {hero.hero_name}")
 
             queue.task_done()
             time.sleep(1)  # 控制爬取速度
 
-    except queue.Empty:
-        logger.info(f"爬虫线程 {thread_id} 无任务可执行")
     except Exception as e:
         logger.error(f"爬虫线程 {thread_id} 出错: {str(e)}", exc_info=True)
     finally:
@@ -406,13 +414,14 @@ def background_crawl_task(hero_list, thread_count):
         t.join()
     logger.info("所有爬虫线程已退出，后台任务结束")
 
+
 @wzry_api.get("/crawler/heroDetailByBg")
-async def crawler_hero_detail_by_bg(id: int):
+async def crawler_hero_detail_by_bg():
     """
     通过后台线程爬取英雄详情数据
     """
     # 启动后台总控线程（非阻塞，接口立即返回）
-    hero_list = await HeroInfo.filter(is_crawl=False, category="王者荣耀", id__lt=id)
+    hero_list = await HeroInfo.filter(is_crawl=False, category="王者荣耀")
     print(f'待爬取英雄数量：{len(hero_list)}')
     if not hero_list:
         return {
@@ -435,3 +444,78 @@ async def crawler_hero_detail_by_bg(id: int):
             "thread_count": 3
         }
     }
+
+
+@wzry_api.get("/crawler/heroWord")
+async def crawler_hero_word(id: int):
+    """
+    爬取英雄语音台词
+    """
+    hero_info = await HeroInfo.get(id=id, is_crawl=False, category="王者荣耀")
+
+    # 爬取的链接格式：https://pvp.qq.com/zlkdatasys/yuzhouzhan/herovoice/172.json?t=1761263896565，172是英雄id，1761263896565是时间戳
+    url = f"https://pvp.qq.com/zlkdatasys/yuzhouzhan/herovoice/{hero_info.hero_id}.json?t={int(time.time() * 1000)}"
+    try:
+        # 可选：添加请求头（模拟浏览器，避免部分网站拒绝请求）
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+        }
+
+        # 发送GET请求，设置超时时间（避免无限等待）
+        response = requests.get(url, headers=headers, timeout=10)
+
+        # 检查请求是否成功（状态码200表示成功）
+        response.raise_for_status()  # 若状态码非200，会抛出HTTPError
+
+        # 解析JSON内容（两种方式）
+        # 方式1：使用requests内置的json()方法（推荐，自动处理编码）
+        json_data = response.json()
+
+        # 方式2：使用json模块的loads()方法（需先获取文本内容）
+        # json_text = response.text
+        # json_data = json.loads(json_text)
+
+        save_path = os.path.join(f"static/json/wzry/voice/", f"{hero_info.hero_name}.json")
+        # 2. 处理保存路径：确保目录存在
+        # 分离目录和文件名（例如："data/json/sample.json" → 目录是"data/json"，文件名是"sample.json"）
+        dir_path = os.path.dirname(save_path)
+        if dir_path:  # 若目录不为空（即不是当前目录）
+            os.makedirs(dir_path, exist_ok=True)  # 递归创建目录，exist_ok=True避免目录已存在时报错
+
+        # 3. 保存JSON文件（两种方式二选一）
+        # 方式1：保存原始JSON文本（保留服务器返回的原始格式，如缩进、空格）
+        # with open(save_path, "w", encoding="utf-8") as f:
+        #     f.write(response.text)
+
+        # 方式2：保存解析后的Python对象（自动格式化，确保JSON规范，推荐）
+        with open(save_path, "w", encoding="utf-8") as f:
+            json.dump(json_data, f, ensure_ascii=False, indent=2)  # indent=2：格式化缩进，更易读
+
+        print(f"JSON文件已成功保存到：{os.path.abspath(save_path)}")
+
+        # 获取json_data的dqpfyy_5403属性
+        dqpfyy_5403 = json_data.get("dqpfyy_5403")
+        print("dqpfyy_5403", dqpfyy_5403)
+        if dqpfyy_5403:
+            # 获取dqpfyy_5403的属性yylbzt_9132，是一个list
+            yylbzt_9132 = dqpfyy_5403.get("yylbzt_9132")
+            if yylbzt_9132:
+                for item in yylbzt_9132:
+                    word = item.get("yywbzt_1517")
+                    print("台词：", word)
+                    voice_url = "https:" + item.get("yywjzt_5304")
+                    print("语音链接：", voice_url)
+
+        return json_data
+
+    except requests.exceptions.ConnectionError:
+        print("错误：网络连接失败，请检查URL或网络")
+    except requests.exceptions.Timeout:
+        print("错误：请求超时")
+    except requests.exceptions.HTTPError as e:
+        print(f"错误：请求失败，状态码：{e.response.status_code}")
+    except json.JSONDecodeError:
+        print("错误：JSON格式无效，无法解析")
+    except Exception as e:
+        print(f"发生未知错误：{e}")
+    return None
