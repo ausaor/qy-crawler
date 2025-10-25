@@ -1,4 +1,4 @@
-from orm.models import HeroInfo, HeroSkin
+from orm.models import HeroInfo, HeroSkin, HeroWord
 import time
 import threading
 import queue
@@ -478,71 +478,99 @@ async def crawler_hero_word(id: int):
     """
     爬取英雄语音台词
     """
-    hero_info = await HeroInfo.get(id=id, is_crawl=False, category="王者荣耀")
+    hero_info_list = await HeroInfo.filter(is_crawl=False, category="王者荣耀", id__lt=id)
+    for hero_info in hero_info_list:
+        # 爬取的链接格式：https://pvp.qq.com/zlkdatasys/yuzhouzhan/herovoice/172.json?t=1761263896565，172是英雄id，1761263896565是时间戳
+        url = f"https://pvp.qq.com/zlkdatasys/yuzhouzhan/herovoice/{hero_info.hero_id}.json?t={int(time.time() * 1000)}"
+        try:
+            # 可选：添加请求头（模拟浏览器，避免部分网站拒绝请求）
+            headers = {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+            }
 
-    # 爬取的链接格式：https://pvp.qq.com/zlkdatasys/yuzhouzhan/herovoice/172.json?t=1761263896565，172是英雄id，1761263896565是时间戳
-    url = f"https://pvp.qq.com/zlkdatasys/yuzhouzhan/herovoice/{hero_info.hero_id}.json?t={int(time.time() * 1000)}"
-    try:
-        # 可选：添加请求头（模拟浏览器，避免部分网站拒绝请求）
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-        }
+            # 发送GET请求，设置超时时间（避免无限等待）
+            response = requests.get(url, headers=headers, timeout=10)
 
-        # 发送GET请求，设置超时时间（避免无限等待）
-        response = requests.get(url, headers=headers, timeout=10)
+            # 检查请求是否成功（状态码200表示成功）
+            response.raise_for_status()  # 若状态码非200，会抛出HTTPError
 
-        # 检查请求是否成功（状态码200表示成功）
-        response.raise_for_status()  # 若状态码非200，会抛出HTTPError
+            # 解析JSON内容（两种方式）
+            # 方式1：使用requests内置的json()方法（推荐，自动处理编码）
+            json_data = response.json()
 
-        # 解析JSON内容（两种方式）
-        # 方式1：使用requests内置的json()方法（推荐，自动处理编码）
-        json_data = response.json()
+            # 方式2：使用json模块的loads()方法（需先获取文本内容）
+            # json_text = response.text
+            # json_data = json.loads(json_text)
 
-        # 方式2：使用json模块的loads()方法（需先获取文本内容）
-        # json_text = response.text
-        # json_data = json.loads(json_text)
+            save_path = os.path.join(f"static/json/wzry/voice/", f"{hero_info.hero_name}.json")
+            # 2. 处理保存路径：确保目录存在
+            # 分离目录和文件名（例如："data/json/sample.json" → 目录是"data/json"，文件名是"sample.json"）
+            dir_path = os.path.dirname(save_path)
+            if dir_path:  # 若目录不为空（即不是当前目录）
+                os.makedirs(dir_path, exist_ok=True)  # 递归创建目录，exist_ok=True避免目录已存在时报错
 
-        save_path = os.path.join(f"static/json/wzry/voice/", f"{hero_info.hero_name}.json")
-        # 2. 处理保存路径：确保目录存在
-        # 分离目录和文件名（例如："data/json/sample.json" → 目录是"data/json"，文件名是"sample.json"）
-        dir_path = os.path.dirname(save_path)
-        if dir_path:  # 若目录不为空（即不是当前目录）
-            os.makedirs(dir_path, exist_ok=True)  # 递归创建目录，exist_ok=True避免目录已存在时报错
+            # 3. 保存JSON文件（两种方式二选一）
+            # 方式1：保存原始JSON文本（保留服务器返回的原始格式，如缩进、空格）
+            # with open(save_path, "w", encoding="utf-8") as f:
+            #     f.write(response.text)
 
-        # 3. 保存JSON文件（两种方式二选一）
-        # 方式1：保存原始JSON文本（保留服务器返回的原始格式，如缩进、空格）
-        # with open(save_path, "w", encoding="utf-8") as f:
-        #     f.write(response.text)
+            # 方式2：保存解析后的Python对象（自动格式化，确保JSON规范，推荐）
+            with open(save_path, "w", encoding="utf-8") as f:
+                json.dump(json_data, f, ensure_ascii=False, indent=2)  # indent=2：格式化缩进，更易读
 
-        # 方式2：保存解析后的Python对象（自动格式化，确保JSON规范，推荐）
-        with open(save_path, "w", encoding="utf-8") as f:
-            json.dump(json_data, f, ensure_ascii=False, indent=2)  # indent=2：格式化缩进，更易读
+            print(f"JSON文件已成功保存到：{os.path.abspath(save_path)}")
 
-        print(f"JSON文件已成功保存到：{os.path.abspath(save_path)}")
+            # 获取json_data的dqpfyy_5403属性
+            dqpfyy_5403 = json_data.get("dqpfyy_5403")
+            print("dqpfyy_5403", dqpfyy_5403)
 
-        # 获取json_data的dqpfyy_5403属性
-        dqpfyy_5403 = json_data.get("dqpfyy_5403")
-        print("dqpfyy_5403", dqpfyy_5403)
-        if dqpfyy_5403:
-            # 获取dqpfyy_5403的属性yylbzt_9132，是一个list
-            yylbzt_9132 = dqpfyy_5403.get("yylbzt_9132")
-            if yylbzt_9132:
-                for item in yylbzt_9132:
-                    word = item.get("yywbzt_1517")
-                    print("台词：", word)
-                    voice_url = "https:" + item.get("yywjzt_5304")
-                    print("语音链接：", voice_url)
+            hero_word_list = []
+            if dqpfyy_5403:
+                # 获取dqpfyy_5403的属性yylbzt_9132，是一个list
+                yylbzt_9132 = dqpfyy_5403.get("yylbzt_9132")
+                if yylbzt_9132:
+                    for item in yylbzt_9132:
+                        word = item.get("yywbzt_1517")
+                        print("台词：", word)
+                        voice_url = "https:" + item.get("yywjzt_5304")
+                        print("语音链接：", voice_url)
+                        hero_word_list.append({
+                            "hero_id": hero_info.hero_id,
+                            "hero_name": hero_info.hero_name,
+                            "word": word,
+                            "voice_url": voice_url,
+                            "category": "王者荣耀",
+                            "create_time": datetime.now(),
+                            "update_time": datetime.now()
+                        })
 
-        return json_data
+            # 使用 bulk_create 批量插入台词数据
+            if hero_word_list:
+                hero_words = []
+                for word_data in hero_word_list:
+                    hero_words.append(HeroWord(**word_data))
 
-    except requests.exceptions.ConnectionError:
-        print("错误：网络连接失败，请检查URL或网络")
-    except requests.exceptions.Timeout:
-        print("错误：请求超时")
-    except requests.exceptions.HTTPError as e:
-        print(f"错误：请求失败，状态码：{e.response.status_code}")
-    except json.JSONDecodeError:
-        print("错误：JSON格式无效，无法解析")
-    except Exception as e:
-        print(f"发生未知错误：{e}")
-    return None
+                # 批量插入，每批100条记录
+                await HeroWord.bulk_create(hero_words, batch_size=100)
+                print(f"批量插入{hero_info.hero_name}的台词数据成功，共插入 {len(hero_words)} 条台词数据")
+
+            # 更新爬虫状态
+            await HeroInfo.filter(id=hero_info.id).update(
+                is_crawl=True,
+                update_time=datetime.now()
+            )
+
+            # 休眠1秒
+            time.sleep(1)
+        except requests.exceptions.ConnectionError:
+            print("错误：网络连接失败，请检查URL或网络")
+        except requests.exceptions.Timeout:
+            print("错误：请求超时")
+        except requests.exceptions.HTTPError as e:
+            print(f"错误：请求失败，状态码：{e.response.status_code}")
+        except json.JSONDecodeError:
+            print("错误：JSON格式无效，无法解析")
+        except Exception as e:
+            print(f"发生未知错误：{e}")
+
+    return {"message": "爬取完成"}
