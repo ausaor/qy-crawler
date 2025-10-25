@@ -1,0 +1,945 @@
+{
+  "yxmczt_3242": "莱西奥",
+  "yxidzt_6368": "545",
+  "dqpfyy_5403": [
+    {
+      "pffmtm_4757": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20221230/16723868148827.jpg",
+      "pffmtm_8153": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20221230/16723868186009.jpg",
+      "yylbzt_9132": [
+        {
+          "yywbzt_1517": "别担心，火鹰来了！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722987232818.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "大厅语音1"
+        },
+        {
+          "yywbzt_1517": "继承传奇之名，续写英雄之事！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722987398637.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "大厅语音2"
+        },
+        {
+          "yywbzt_1517": "我没有在演英雄，我只是在做自己。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722987562003.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "大厅语音3"
+        },
+        {
+          "yywbzt_1517": "我的名字吗？火鹰，莱西奥，喂那个扛炮的，随你怎么叫。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722864021770.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "出生语音"
+        },
+        {
+          "yywbzt_1517": "别担心，火鹰来了。在那段扮演的日子里，我经常这样说。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722864478946.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音1"
+        },
+        {
+          "yywbzt_1517": "海都有海都的规矩，外城有外城的活法。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722864765520.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音2"
+        },
+        {
+          "yywbzt_1517": "我们这里什么都缺，但是勇气，要多少有多少。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722937189269.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音3"
+        },
+        {
+          "yywbzt_1517": "凡事少问“能不能”，问问自己，该不该。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722937508655.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音4"
+        },
+        {
+          "yywbzt_1517": "在面对自我时找到弱点，在面对敌人时忘掉弱点。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722937816230.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音5"
+        },
+        {
+          "yywbzt_1517": "海都有句老话——财产可能被夺走，信念却不能……虽然我也没什么财产。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722938043367.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音6"
+        },
+        {
+          "yywbzt_1517": "吹口哨：水手号子",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722938299454.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音7"
+        },
+        {
+          "yywbzt_1517": "我曾经忘记面具下的人是谁……现在，我想起来了。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722938593890.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音8"
+        },
+        {
+          "yywbzt_1517": "有更弱小的人在身后，这就是我站在这里的理由。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722938855875.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音9"
+        },
+        {
+          "yywbzt_1517": "英雄从来都不是一个名字，而是他所做的事。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722939084528.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音10"
+        },
+        {
+          "yywbzt_1517": "在老船长回来之前，面具，就由我来保管吧。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722939311249.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音11"
+        },
+        {
+          "yywbzt_1517": "面朝大海，你会知道要往哪起航。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722939951773.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音12"
+        },
+        {
+          "yywbzt_1517": "邀请函中提到的合金弹头，应该能让我的火炮威力大涨吧！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722940189535.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "彩蛋移动语音13"
+        },
+        {
+          "yywbzt_1517": "或许有一天，我会应邀去看看合金弹头，以火鹰之名。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722940411956.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "彩蛋移动语音14"
+        },
+        {
+          "yywbzt_1517": "我确实没什么大本事，但打败你，足够了。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722940885284.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "挑衅语音1"
+        },
+        {
+          "yywbzt_1517": "炮弹经费有限，不值得在你这里浪费太多~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722941154756.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "挑衅语音2"
+        },
+        {
+          "yywbzt_1517": "我还是不如他……但我还是会站出来。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722941517395.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "死亡语音1"
+        },
+        {
+          "yywbzt_1517": "总会有……新的火鹰出现……",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722941779210.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "死亡语音2"
+        },
+        {
+          "yywbzt_1517": "这不是我的悲哀……这是我的选择……",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722941989384.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "死亡语音3"
+        },
+        {
+          "yywbzt_1517": "我还有个合金弹头的邀约，没答复……",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722942288983.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "死亡语音4"
+        },
+        {
+          "yywbzt_1517": "放弃这个词可不适合我！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722942648965.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "复活语音"
+        },
+        {
+          "yywbzt_1517": "干的不错，小火鹰！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722942963546.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "击杀语音-空中"
+        },
+        {
+          "yywbzt_1517": "我还没出绝招呢！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722943204868.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "击杀语音-地面"
+        },
+        {
+          "yywbzt_1517": "几年不见，你的锤子还是一样莽撞。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722943782704.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "死亡语音-狂铁"
+        },
+        {
+          "yywbzt_1517": "除了脑子和胆子，一点运气也是必不可少的。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722944011498.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "训练营彩蛋语音"
+        },
+        {
+          "yywbzt_1517": "论实力~还是我的火炮更胜一筹。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722944377378.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "击杀语音-狂铁"
+        },
+        {
+          "yywbzt_1517": "完美操作",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722944876009.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "助攻语音-狂铁"
+        },
+        {
+          "yywbzt_1517": "有我们在",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722945126122.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "助攻语音-狂铁"
+        },
+        {
+          "yywbzt_1517": "这颗炮弹，早该送给你了！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722945649373.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "击杀语音-米莱狄1"
+        },
+        {
+          "yywbzt_1517": "高塔会被怒火点燃！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722945857132.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "击杀语音-米莱狄2"
+        },
+        {
+          "yywbzt_1517": "伤口可不是什么值得炫耀的事情。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722946395912.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "低血量回城"
+        },
+        {
+          "yywbzt_1517": "如果老船长在这里，他会怎么做？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722946731994.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "idle语音1"
+        },
+        {
+          "yywbzt_1517": "嘿，新火鹰船长，你现在要怎么做？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722947251035.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "idle语音2"
+        },
+        {
+          "yywbzt_1517": "来一杯吗~奇迹酒馆的牛奶最新鲜了~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722947506857.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "idle语音3"
+        },
+        {
+          "yywbzt_1517": "辛苦了朋友，你最近的出场频率很高嘛~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722947721397.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "idle语音4"
+        },
+        {
+          "yywbzt_1517": "海盗克星？守护者之火？……起名太麻烦了，就叫你“小火炮”吧。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722947984465.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "idle语音5"
+        },
+        {
+          "yywbzt_1517": "产生了新的研究灵感~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722948491893.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "购买装备-攻速鞋/韧性鞋"
+        },
+        {
+          "yywbzt_1517": "让我看看，有没有打折的便宜货啊？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722948766705.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "购买装备-无尽战刃"
+        },
+        {
+          "yywbzt_1517": "旧货市场里，总能淘到好东西。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722949069096.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "购买装备-影刃"
+        },
+        {
+          "yywbzt_1517": "给我的“小火炮”，来点又快又猛的配件。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722949362003.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "购买装备-泣血之刃"
+        },
+        {
+          "yywbzt_1517": "准备好~向日出的方向起航！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722949713523.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "购买装备-破晓"
+        },
+        {
+          "yywbzt_1517": "面具被踩碎的那刻，我拥有了再来一次的机会。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722950076045.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "购买装备-复活甲"
+        },
+        {
+          "yywbzt_1517": "海都有十几个魔道家族，他们个个穿着一件这样的斗篷。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722950404953.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "购买装备-魔女斗篷"
+        },
+        {
+          "yywbzt_1517": "起航！穿越迷雾之海，接老船长回家。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722950782077.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "路过水域"
+        },
+        {
+          "yywbzt_1517": "听说远海藏着巨大的海兽，他们会长这个样子吗？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722951018979.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "路过主宰"
+        },
+        {
+          "yywbzt_1517": "试试新发明~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722951638119.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "一技能_1"
+        },
+        {
+          "yywbzt_1517": "填充完毕！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722951812974.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "一技能_2"
+        },
+        {
+          "yywbzt_1517": "独家制造~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722951995931.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "一技能_3"
+        },
+        {
+          "yywbzt_1517": "准备好了吗？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722952348167.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "二技能空中开启_1"
+        },
+        {
+          "yywbzt_1517": "续写传奇！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722952521686.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "二技能空中开启_2"
+        },
+        {
+          "yywbzt_1517": "英雄登场！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722952713940.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "二技能空中开启_3"
+        },
+        {
+          "yywbzt_1517": "嘘，别出声~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722952959778.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "二技能地面开启_1"
+        },
+        {
+          "yywbzt_1517": "嘿，我在这儿~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722953149895.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "二技能地面开启_2"
+        },
+        {
+          "yywbzt_1517": "嗯~见机行事~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722953344776.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "二技能地面开启_3"
+        },
+        {
+          "yywbzt_1517": "别担心，火鹰来了！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722953562602.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "三技能满血_1"
+        },
+        {
+          "yywbzt_1517": "别怕，交给我！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722953773508.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "三技能满血_2"
+        },
+        {
+          "yywbzt_1517": "各位，来看烟花吗？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722953978522.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "三技能满血_3"
+        },
+        {
+          "yywbzt_1517": "放弃这个词可不适合我！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722954161381.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "三技能残血_1"
+        },
+        {
+          "yywbzt_1517": "火力全开！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722954402993.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "三技能残血_2"
+        },
+        {
+          "yywbzt_1517": "放手一搏吧！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722954736065.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "三技能残血_3"
+        },
+        {
+          "yywbzt_1517": "专属于你的烟花秀！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722954959818.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "三技能命中同一人_1"
+        },
+        {
+          "yywbzt_1517": "来点火爆的！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722955155027.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "三技能命中同一人_2"
+        },
+        {
+          "yywbzt_1517": "介绍一下，这是我最好的兄弟查尔，不过大家都叫他“佣兵狂铁”",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722955962286.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-狂铁"
+        },
+        {
+          "yywbzt_1517": "下次再这么莽撞，这铁家伙可别找我修！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722956225623.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-狂铁"
+        },
+        {
+          "yywbzt_1517": "就你那点钱，勉强只够机械臂的维修费。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722956465408.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-狂铁"
+        },
+        {
+          "yywbzt_1517": "老船长冒险出海，难道也和你说的污染有关？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722956708128.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-狂铁"
+        },
+        {
+          "yywbzt_1517": "省省吧，这可是要掉另一条胳膊的事。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722956954473.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-狂铁"
+        },
+        {
+          "yywbzt_1517": "看来火鹰号的船员，你是当定了。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722957163847.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-狂铁"
+        },
+        {
+          "yywbzt_1517": "一个人绝不该因他的勇气而被审判",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722957515062.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-米莱狄"
+        },
+        {
+          "yywbzt_1517": "有人为海都冒险远航，有人却高居塔顶看不到危机。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722957751828.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-米莱狄"
+        },
+        {
+          "yywbzt_1517": "火鹰号不会变成阿尔卡纳的私人物品，它属于火鹰船长所保护的地方。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722958033407.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-米莱狄"
+        },
+        {
+          "yywbzt_1517": "大概是我身上有它喜欢的牛奶味。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722958335256.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-露娜"
+        },
+        {
+          "yywbzt_1517": "为可爱的小猫服务，我的……荣幸。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722958565875.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-露娜"
+        },
+        {
+          "yywbzt_1517": "我们都在等待一个返航的人。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722958801294.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-露娜"
+        },
+        {
+          "yywbzt_1517": "如果远游之人迷失了归家的方向，那就出发去找到他。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722959027784.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-露娜"
+        },
+        {
+          "yywbzt_1517": "我听过一个故事，日落海上徘徊的幽灵，他的名字叫凯因。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722959277251.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-铠"
+        },
+        {
+          "yywbzt_1517": "我得承认，就算在外城区，你也称得上是有种的。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722959645089.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-铠"
+        },
+        {
+          "yywbzt_1517": "这位魔道贵族少爷，来外城区有什么事？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722960183865.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-马可波罗"
+        },
+        {
+          "yywbzt_1517": "向着明知危险的方向前进，正符合我的风格。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722960691580.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-马可波罗"
+        },
+        {
+          "yywbzt_1517": "会让海风带口信给你的~~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722961083951.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-马可波罗"
+        },
+        {
+          "yywbzt_1517": "既然来了海都，那一定要听听关于老船长的传奇。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722961298828.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-桑启"
+        },
+        {
+          "yywbzt_1517": "嘿，那边的船长，你知道传说中的迷雾之海吗？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20221229/16722961536423.wav",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-孙策"
+        },
+        {
+          "yywbzt_1517": "奇怪，我给大白准备的小鱼干呢？是不是被查尔偷吃了？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230411/16812082887882.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-姬小满"
+        },
+        {
+          "yywbzt_1517": "哦？路费充足的话，本船长倒是可以考虑送你一程！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230411/16812083792240.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-姬小满"
+        },
+        {
+          "yywbzt_1517": "亚连，外面的世界很可怕的，不要相信那帮人的鬼话啊！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230619/16871643182201.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-友方亚连"
+        },
+        {
+          "yywbzt_1517": "来看看我的追击弹设计图，来个几十次瞄准实验，准能成功！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230619/16871605874070.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇语音-敌方亚连"
+        },
+        {
+          "yywbzt_1517": "内城区的朋友，晚上星辰酒馆庆功宴，要一起吗？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20231128/17011451066468.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇海诺"
+        },
+        {
+          "yywbzt_1517": "你们内城区的人，怎么总喜欢把真相藏起来。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20231128/17011451247350.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇海诺"
+        }
+      ],
+      "pfmczt_7754": "火鹰船长",
+      "pffmtz_2425": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20221230/16723868231776.jpg",
+      "pffmic_4237": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20221230/16723817572423.jpg"
+    },
+    {
+      "pffmtm_4757": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20230907/16940572107521.jpg",
+      "pffmtm_8153": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20230907/16940572132280.jpg",
+      "yylbzt_9132": [
+        {
+          "yywbzt_1517": "干得好小家伙！那么接下来，该我登场了！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940691838774.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "大厅语音1"
+        },
+        {
+          "yywbzt_1517": "子弹不为和平而生便毫无意义。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940692024581.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "大厅语音2"
+        },
+        {
+          "yywbzt_1517": "不同的字母代表不同的弹药，选一个吧，还是说，你全都要？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940692297779.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "大厅语音3"
+        },
+        {
+          "yywbzt_1517": "接过这具机甲的那一刻，我也继承了他的责任。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940573338150.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音1"
+        },
+        {
+          "yywbzt_1517": "拯救世界真是件麻烦事……唉，谁让我是星际联盟的大英雄呢？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940574778419.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音2"
+        },
+        {
+          "yywbzt_1517": "在宇宙面前人类的确渺小，但我们生存的意志永无止境。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940575042144.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音3"
+        },
+        {
+          "yywbzt_1517": "就算是临时舰长，也得战斗在第一线。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940575256908.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音4"
+        },
+        {
+          "yywbzt_1517": "你看到游隼小队了吗，他们救人的本事可是一流的。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940575598002.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音6"
+        },
+        {
+          "yywbzt_1517": "在星际流浪的那些日子里，我听过最多的词就是和平。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940575834117.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音7"
+        },
+        {
+          "yywbzt_1517": "钢铁之躯和血肉之身又有什么区别，过几百年还不都是宇宙的尘埃。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940576049306.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "移动语音8"
+        },
+        {
+          "yywbzt_1517": "弹药耗尽……",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940576307165.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "死亡语音"
+        },
+        {
+          "yywbzt_1517": "（Mission Fail）让我再来一次……",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940576551363.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "死亡语音"
+        },
+        {
+          "yywbzt_1517": "子弹上膛！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940581588351.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "一技能语音"
+        },
+        {
+          "yywbzt_1517": "猜猜下颗会是什么！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940581832957.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "一技能语音"
+        },
+        {
+          "yywbzt_1517": "Heavy Machine Gun!",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940585671517.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "一技能语音"
+        },
+        {
+          "yywbzt_1517": "嘘，星星都睡着了。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940586142715.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "二技能地面开启"
+        },
+        {
+          "yywbzt_1517": "喂，看这儿！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940586351534.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "二技能地面开启"
+        },
+        {
+          "yywbzt_1517": "飞跃宇宙！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940586579462.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "二技能空中开启"
+        },
+        {
+          "yywbzt_1517": "启动太空形态！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940586776983.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "二技能空中开启"
+        },
+        {
+          "yywbzt_1517": "炮火轰鸣！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940587172394.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "二技能空中开启"
+        },
+        {
+          "yywbzt_1517": "全屏扫射！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940587938043.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "技能语音3满血1"
+        },
+        {
+          "yywbzt_1517": "（Rocket Launcher）再跑快点儿！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940588146415.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "技能语音3满血2"
+        },
+        {
+          "yywbzt_1517": "可不能临阵脱逃！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940588431282.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "技能语音3残血1"
+        },
+        {
+          "yywbzt_1517": "星星之火！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940588659799.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "技能语音3残血2"
+        },
+        {
+          "yywbzt_1517": "群星为你闪耀！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940588845395.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "技能语音3命中同一人"
+        },
+        {
+          "yywbzt_1517": "你怎么老吃独食？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940589336455.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "技能语音3命中同一人"
+        },
+        {
+          "yywbzt_1517": "放心，这枚是催眠弹。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940589685255.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "击杀语音"
+        },
+        {
+          "yywbzt_1517": "（Mission Complete）希望下次的任务能有点难度~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940589896279.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "击杀语音2"
+        },
+        {
+          "yywbzt_1517": "你的外壳的确崭新又闪亮，但内心就……",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940590087516.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "挑衅"
+        },
+        {
+          "yywbzt_1517": "天才英雄，就是这么自信！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940590352542.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "特殊动作"
+        },
+        {
+          "yywbzt_1517": "（Mission Start）这次的任务是什么？营救人质，还是把对面统统打趴下？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940590822628.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "出生语音"
+        },
+        {
+          "yywbzt_1517": "你尽管出发吧，这边就放心交给我了！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940671448072.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇-友方孙策·末日机甲"
+        },
+        {
+          "yywbzt_1517": "呼叫舰长，本次星变已趋于稳定，你那边情况如何？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940671672543.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇-友方孙策·末日机甲"
+        },
+        {
+          "yywbzt_1517": "你早就看出我不是那个大英雄了吧？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940671911101.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇-友方孙策·末日机甲"
+        },
+        {
+          "yywbzt_1517": "有没有希望不是你说了算！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20230907/16940672147518.mp3",
+          "ssjqmc_1356": "",
+          "yygn_8632": "相遇-敌方吕布·末日机甲"
+        }
+      ],
+      "pfmczt_7754": "末日机甲",
+      "pffmtz_2425": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20230907/16940572159040.jpg",
+      "pffmic_4237": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20230907/16940572186665.jpg"
+    },
+    {
+      "pffmtm_4757": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20250930/17592024088231.jpg",
+      "pffmtm_8153": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20250930/17592024127440.jpg",
+      "yylbzt_9132": [
+        {
+          "yygn_8632": "大厅语音1",
+          "yywbzt_1517": "深呼吸，感受宇宙的脉搏。——它似乎在说，冒险，从这里开始！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591124445978.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "大厅语音2",
+          "yywbzt_1517": "激活曲速跃迁通道，目标---是最亮的那颗星！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591124878651.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "大厅语音3",
+          "yywbzt_1517": "出发吧，去寻找有关星辰、宇宙以及万物的终极答案！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591125333431.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "移动语音1",
+          "yywbzt_1517": "检查装备，出发。不，我才没有故意装严肃。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591136753681.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "移动语音2",
+          "yywbzt_1517": "运气真好，来的路上看到了鹰隼座星云大爆发！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591137072176.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "移动语音3",
+          "yywbzt_1517": "曾经是星际游民又怎样？守护宇宙，从来不看出身！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591137397187.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "移动语音4",
+          "yywbzt_1517": "还是出外勤有意思，我可不想回去看调查报告……",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591137649700.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "移动语音5",
+          "yywbzt_1517": "那些散落在宇宙深处的石碑…究竟传递了什么讯息？",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591137924195.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "回城语音",
+          "yywbzt_1517": "嘿，不要慌张～",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591138709697.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "死亡语音",
+          "yywbzt_1517": "任务简报里，别写这段……",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591138957706.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "一技能语音",
+          "yywbzt_1517": "脉冲枪预热！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591139186753.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "一技能语音",
+          "yywbzt_1517": "弹道校准！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591139423253.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "二技能地面开启",
+          "yywbzt_1517": "量子派对开始咯！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591139661610.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "二技能地面开启",
+          "yywbzt_1517": "群星，在此汇聚！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591139891552.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "二技能空中开启",
+          "yywbzt_1517": "点亮星空吧~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591140117220.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "二技能空中开启",
+          "yywbzt_1517": "星辰流转！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591140337214.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "技能语音3残血",
+          "yywbzt_1517": "超新星—脉冲——",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591142059868.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "技能语音3满血",
+          "yywbzt_1517": "尝尝高能粒子！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591141307158.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "技能语音3命中同一人",
+          "yywbzt_1517": "精准打击！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591141706052.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "技能语音3命中同一人",
+          "yywbzt_1517": "完美命中！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591142216565.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "击杀语音",
+          "yywbzt_1517": "目标已“蒸发”~",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591142459668.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "挑衅",
+          "yywbzt_1517": "哎，星管局面试第一轮淘汰的，都是你这种人～",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591142703824.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "个性动作",
+          "yywbzt_1517": "完美收工~——喂喂，别散架啊朋友！",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591142993648.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "遇见EWC 亚连 友方",
+          "yywbzt_1517": "孤星的事情处理好了吗？大家伙儿都等着呢.",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591143313581.mp3",
+          "ssjqmc_1356": ""
+        },
+        {
+          "yygn_8632": "遇见ewc 亚连 敌方",
+          "yywbzt_1517": "处理“星际异常对象”，也算是职责所在啦。",
+          "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250929/17591143554064.mp3",
+          "ssjqmc_1356": ""
+        }
+      ],
+      "pfmczt_7754": "光弋星穹",
+      "pffmtz_2425": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20250930/17592024192591.jpg",
+      "pffmic_4237": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20250930/17592024233407.jpg"
+    }
+  ]
+}

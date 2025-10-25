@@ -1,0 +1,595 @@
+{
+  "yxmczt_3242": "",
+  "yxidzt_6368": "",
+  "dqpfyy_5403": {
+    "pffmtm_4757": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20250325/17428853127132.jpg",
+    "pffmtm_8153": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20250325/17428853148045.jpg",
+    "yylbzt_9132": [
+      {
+        "yygn_8632": "大厅语音1",
+        "yywbzt_1517": "三球两碗一手鬼，六神无主四方惊。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428005797631.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "大厅语音2",
+        "yywbzt_1517": "乾坤倒转，万物归一；诡手见花，现世惊奇。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428018338911.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "大厅语音3",
+        "yywbzt_1517": "虚空变化诸般万物，尽归一手之间。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250331/17434063489973.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "移动语音1",
+        "yywbzt_1517": "眼睛，是会骗人的～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428020585940.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "移动语音2",
+        "yywbzt_1517": "需要我帮忙“拿”什么吗？我什么都能“拿来”。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428021283912.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "移动语音3",
+        "yywbzt_1517": "空手来者，亦可满载而归呢。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428021987055.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "移动语音4",
+        "yywbzt_1517": "祖传绝活，童叟无欺。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428022775794.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "移动语音5",
+        "yywbzt_1517": "诸位看官，钱袋空的捧诚意，诚意空的捧性命。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428023054914.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "移动语音6",
+        "yywbzt_1517": "掌中戏的价码，可不是人人都能付得起。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428024875433.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "移动语音7",
+        "yywbzt_1517": "小碗空复来，猴儿可不退买命财。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428025975429.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "移动语音8",
+        "yywbzt_1517": "这世上最厉害的戏法，是改变人心。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428027583796.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "移动语音9",
+        "yywbzt_1517": "三仙归洞只有一个秘密，那就是“快”。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428034081100.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "挑衅1",
+        "yywbzt_1517": "这便为阁下的人生，作一出落幕大戏。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428036469174.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "挑衅2",
+        "yywbzt_1517": "请别做无谓挣扎了，您逃不出我的掌心。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428036932774.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "被动-偷装备成功1",
+        "yywbzt_1517": "拿来吧您。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428037354645.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "被动-偷装备成功2",
+        "yywbzt_1517": "妙手空空～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428038112924.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "被动-偷装备成功3",
+        "yywbzt_1517": "借来一用～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428038366167.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "被动-偷大件1",
+        "yywbzt_1517": "乾坤袖里借三分春色。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428038637132.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "被动-偷大件2",
+        "yywbzt_1517": "阁下性豪，空空儿先行谢过。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428039002847.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "被动-偷大件3",
+        "yywbzt_1517": "戏法师的事情，怎么能叫偷呢。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428039283802.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "被动-每偷取 10 次装备成功触发",
+        "yywbzt_1517": "三仙归洞，十方皆空！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428039581281.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "被动-偷装备分给队友1",
+        "yywbzt_1517": "劫富济贫",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428040141545.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "被动-偷装备分给队友2",
+        "yywbzt_1517": "无中生有",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428040675573.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "被动-偷装备分给队友3",
+        "yywbzt_1517": "借花献佛",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428040981321.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "被动-偷装备还给敌人 1",
+        "yywbzt_1517": "承蒙厚爱，物归原主～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428044586920.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音",
+        "yywbzt_1517": "我看原主也要归我了～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428044978908.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音",
+        "yywbzt_1517": "取煞添吉，接着！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428045517472.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音",
+        "yywbzt_1517": "您可莫“撒手”啊～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428046669732.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音",
+        "yywbzt_1517": "瞧好了，千万别眨眼。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428047345087.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音",
+        "yywbzt_1517": "脚下三尺是阴阳界——想好了再行。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428047883861.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音1/2【分身】",
+        "yywbzt_1517": "变！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428048317017.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音1/2【分身】",
+        "yywbzt_1517": "去！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428048797297.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音1/2【分身】",
+        "yywbzt_1517": "开！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428052731936.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音1/2【分身】",
+        "yywbzt_1517": "散！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428052975799.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音",
+        "yywbzt_1517": "化三清",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428053913616.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音",
+        "yywbzt_1517": "万华缭乱！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428054234636.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音",
+        "yywbzt_1517": "三洞藏仙！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428054889741.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音",
+        "yywbzt_1517": "虚则步步杀机，实则笑取首级～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428055196450.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音",
+        "yywbzt_1517": "谁是碗底的豆？谁是扣命的妖！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428055458946.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音1/2技能二段【换位】",
+        "yywbzt_1517": "留神~",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428055819330.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音1/2技能二段【换位】",
+        "yywbzt_1517": "当心~",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428056061775.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音3_3",
+        "yywbzt_1517": "吞进贪嗔三千两！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428056397821.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音3_2",
+        "yywbzt_1517": "归洞的三仙呐，替您收九两魂！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428056999800.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "技能语音3_1",
+        "yywbzt_1517": "揭彩布的时辰，便是索命的光景！",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428057354035.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "击杀语音1",
+        "yywbzt_1517": "戏法而已～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428058186278.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "击杀语音2",
+        "yywbzt_1517": "借您一命～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428058474877.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "击杀语音3",
+        "yywbzt_1517": "真当我是个好人呐～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428058717205.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "空空儿五杀（超难彩蛋）",
+        "yywbzt_1517": "袖里收尽冤魂泪，台上笑看仇雠崩。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428059042317.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "死亡语音",
+        "yywbzt_1517": "哎……身负业障之人，总归要下地狱。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428059337452.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "rest",
+        "yywbzt_1517": "猜猜看吧。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428140244601.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "功能",
+        "yywbzt_1517": "没什么能骗过一个彩戏师的眼睛～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428142075771.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "功能",
+        "yywbzt_1517": "可惜啊。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428144739895.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "功能",
+        "yywbzt_1517": "三步一笑戏开场，五步牵魂索悬梁。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428146131567.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "回城",
+        "yywbzt_1517": "一场散去二场来，换个彩头戏连台。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428146408332.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "胜方MVP",
+        "yywbzt_1517": "十殿阎罗睁眼日，笑面鬼手锁魂时。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250331/17434060533270.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "败方MVP",
+        "yywbzt_1517": "秋后账本厚一寸，人头就低三分。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250331/17434081139696.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "重生语音",
+        "yywbzt_1517": "无无有有去复来，假假真真总难猜。人生如戏一般难。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428148083359.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "互动语音",
+        "yywbzt_1517": "官家小姐，我是戏法师，不是法师。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428151148380.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "互动语音",
+        "yywbzt_1517": "小将军冤枉~我可不是——普通的蟊贼。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428151362165.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "互动语音",
+        "yywbzt_1517": "密探大人，你这般瞧我做甚。我只是个平平无奇的街边手艺人。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428151598347.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "相遇-李元芳（敌）",
+        "yywbzt_1517": "青天大老爷，我不过是带着十年前的旧账本，前去讨债罢了。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428151885452.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "互动语音",
+        "yywbzt_1517": "“卦象卜生死，彩戏定无常。”你我都走下九流，谁能骗得了谁呀。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428152946154.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "互动语音",
+        "yywbzt_1517": "人间无路，地狱不收。不如跟城判大人一道做个扫街鬼？",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428153372717.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "互动语音",
+        "yywbzt_1517": "大师既言众生平等，那便请您先入轮回。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428159347464.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "互动语音",
+        "yywbzt_1517": "承蒙抬爱，恕不远送。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428159861079.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "互动语音",
+        "yywbzt_1517": "小郎君不如指望阴阳碗反转，善恶掉个头。否则，鬼门外怎可能是阳关道？",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428160142027.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "互动语音",
+        "yywbzt_1517": "人死不能复生，债重难渡孽海。多厉害的戏法师，也变不出本就不存在的东西。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250324/17428160352576.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "指望“神明”归来终结苦难？诸君挣扎在绝望中的幻想，还是由我来帮忙了断吧。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250605/17491082423731.mp3",
+        "ssjqmc_1356": "云篆启封时"
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "那扇门的背后究竟是什么，我会亲眼去见证。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250605/17491082881147.mp3",
+        "ssjqmc_1356": "云篆启封时"
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "传承自神明时代的组织……听起来很高端，结果一个正常人都没有么？",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250605/17491083241215.mp3",
+        "ssjqmc_1356": "云篆启封时"
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "像我这种人，也能守护“平凡的生活”么？",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250605/17491083978032.mp3",
+        "ssjqmc_1356": "云篆启封时"
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "回收云篆仪的任务就交给这种小队了，真让人觉得前途未卜呢。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250605/17491084346487.mp3",
+        "ssjqmc_1356": "云篆启封时"
+      },
+      {
+        "yygn_8632": "哪吒&空空儿 泉水对话",
+        "yywbzt_1517": "算了，没事，不急——我说真的。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250605/17491092251924.mp3",
+        "ssjqmc_1356": "云篆启封时"
+      },
+      {
+        "yygn_8632": "哪吒&空空儿 泉水对话",
+        "yywbzt_1517": "我只是与诸位同行，还是不要对我期待太多。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250605/17491092606421.mp3",
+        "ssjqmc_1356": "云篆启封时"
+      },
+      {
+        "yygn_8632": "哪吒&空空儿 泉水对话",
+        "yywbzt_1517": "说不定什么时候，它又失灵了。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250605/17491092976349.mp3",
+        "ssjqmc_1356": "云篆启封时"
+      },
+      {
+        "yygn_8632": "哪吒&空空儿 泉水对话",
+        "yywbzt_1517": "所以伏鹤每次算的卦，都是只捡好听的说吗？",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250605/17491093465980.mp3",
+        "ssjqmc_1356": "云篆启封时"
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "追兵一波接一波，我莫不是上了什么贼船？",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250825/17561113144273.mp3",
+        "ssjqmc_1356": "炉中云篆"
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "扛着长刀的敌人又出现了，这一次有命来看戏，可不一定有命能回去~",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250825/17561114618570.mp3",
+        "ssjqmc_1356": "炉中云篆"
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "修建梯子往天上爬？用双脚跨越天渊之距，这就是归山一族么……",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250825/17561115177633.mp3",
+        "ssjqmc_1356": "炉中云篆"
+      },
+      {
+        "yygn_8632": "空空儿&太乙真人泉水对话",
+        "yywbzt_1517": "一些归山子民身上，也流转着那样的纹路……",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250825/17561115651929.mp3",
+        "ssjqmc_1356": "炉中云篆"
+      },
+      {
+        "yygn_8632": "空空儿&哪吒泉水对话",
+        "yywbzt_1517": "阁下之前所说的“门”后世界，便在建木那天梯之上？",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250825/17561116551325.mp3",
+        "ssjqmc_1356": "炉中云篆"
+      },
+      {
+        "yygn_8632": "哪吒&空空儿 泉水对话",
+        "yywbzt_1517": "紊流兽既是从紊流而出，看来还得直捣其源头。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250826/17561933612881.mp3",
+        "ssjqmc_1356": "炉中云篆"
+      },
+      {
+        "yygn_8632": "哪吒&空空儿 泉水对话",
+        "yywbzt_1517": "在你们身边不管出现什么样的人，我都不会感到惊讶。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250826/17561933999337.mp3",
+        "ssjqmc_1356": "炉中云篆"
+      },
+      {
+        "yygn_8632": "哪吒&空空儿 泉水对话",
+        "yywbzt_1517": "举手之劳～不过与诸位同行的这一路，确实是处处有惊喜呢。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250826/17561934294672.mp3",
+        "ssjqmc_1356": "炉中云篆"
+      },
+      {
+        "yygn_8632": "妲己&空空儿泉水对话",
+        "yywbzt_1517": "不过使了个障眼法而已，阁下见笑了。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250826/17561934711012.mp3",
+        "ssjqmc_1356": "炉中云篆"
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "拼尽全力也要回去的“故乡”……如今就只剩下一片残垣和虚无了么？",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250922/17585301275671.mp3",
+        "ssjqmc_1356": "登天之志"
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "有那样难缠的对手，奇迹司的千年传承也算可信了一些。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250922/17585302222733.mp3",
+        "ssjqmc_1356": "登天之志"
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "和这群“好人”的合作难度比想象还高，但背后有人的感觉……倒也不坏。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250922/17585303222953.mp3",
+        "ssjqmc_1356": "登天之志"
+      },
+      {
+        "yygn_8632": "泉水出生",
+        "yywbzt_1517": "“鬼手”空空，去而复来，唉，这趟若不“拿”回云篆仪，只怕要砸了招牌。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250922/17585302641282.mp3",
+        "ssjqmc_1356": "登天之志"
+      },
+      {
+        "yygn_8632": "蚩奼&空空儿 泉水喊话",
+        "yywbzt_1517": "先把人带进坑，再踩着风火轮先行一步，这剧本十分熟悉。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250922/17585303698857.mp3",
+        "ssjqmc_1356": "登天之志"
+      },
+      {
+        "yygn_8632": "蚩奼&空空儿  泉水喊话",
+        "yywbzt_1517": "……或许我是在思考，要不要上书“到此一游”呢？",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250922/17585304273333.mp3",
+        "ssjqmc_1356": "登天之志"
+      },
+      {
+        "yygn_8632": "泉水喊话",
+        "yywbzt_1517": "看来有机会，我是该会一会你的这位首领～",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250922/17585305088048.mp3",
+        "ssjqmc_1356": "登天之志"
+      },
+      {
+        "yygn_8632": "泉水喊话",
+        "yywbzt_1517": "我怎么记得，最开始的任务只是回收一件小小的云篆仪来着……",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250924/17586804014759.mp3",
+        "ssjqmc_1356": "登天之志"
+      },
+      {
+        "yygn_8632": "泉水喊话",
+        "yywbzt_1517": "我只能保证，在散场之前，绝对不会有东西从诸位的背后冒出来——除了我的鬼手。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250924/17586802686168.mp3",
+        "ssjqmc_1356": "登天之志"
+      },
+      {
+        "yygn_8632": "相遇",
+        "yywbzt_1517": "等奇迹司回长安复命，你要不要跟着一起？",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250924/17586806909614.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "相遇",
+        "yywbzt_1517": "“十万青山皆锻台，八荒风雨作锤音。”你下次锻造就念这句吧。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250924/17586807173639.mp3",
+        "ssjqmc_1356": ""
+      },
+      {
+        "yygn_8632": "相遇",
+        "yywbzt_1517": "是伏鹤打的包票，你让他用八卦盘算算。",
+        "yywjzt_5304": "//game.gtimg.cn/images/yxzj/zlkdatasys/audios/audio/20250924/17586807561069.mp3",
+        "ssjqmc_1356": ""
+      }
+    ],
+    "pfmczt_7754": "笑面诡手",
+    "pffmtz_2425": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20250325/17428853198929.jpg",
+    "pffmic_4237": "//game.gtimg.cn/images/yxzj/zlkdatasys/images/image/20250325/17428853215322.jpg"
+  }
+}

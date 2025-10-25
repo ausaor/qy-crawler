@@ -473,17 +473,22 @@ async def crawler_hero_detail_by_bg():
     }
 
 
-@wzry_api.get("/crawler/heroWord")
-async def crawler_hero_word(id: int):
-    """
-    爬取英雄语音台词
-    """
-    hero_info_list = await HeroInfo.filter(is_crawl=False, category="王者荣耀", id__lt=id)
-    for hero_info in hero_info_list:
-        # 爬取的链接格式：https://pvp.qq.com/zlkdatasys/yuzhouzhan/herovoice/172.json?t=1761263896565，172是英雄id，1761263896565是时间戳
-        url = f"https://pvp.qq.com/zlkdatasys/yuzhouzhan/herovoice/{hero_info.hero_id}.json?t={int(time.time() * 1000)}"
+def hero_word_worker(queue, thread_id, result_queue):
+    """处理英雄语音台词的工作线程：从队列获取英雄信息并爬取语音台词"""
+    logger.info(f"英雄语音台词线程 {thread_id} 初始化完成")
+    
+    while True:
+        hero_info = queue.get()
+        if hero_info is None:  # 结束信号
+            break
+            
+        logger.info(f"英雄语音台词线程 {thread_id} 开始处理: {hero_info.hero_name}")
+        
         try:
-            # 可选：添加请求头（模拟浏览器，避免部分网站拒绝请求）
+            # 爬取的链接格式：https://pvp.qq.com/zlkdatasys/yuzhouzhan/herovoice/172.json?t=1761263896565，172是英雄id，1761263896565是时间戳
+            url = f"https://pvp.qq.com/zlkdatasys/yuzhouzhan/herovoice/{hero_info.hero_id}.json?t={int(time.time() * 1000)}"
+            
+            # 添加请求头（模拟浏览器，避免部分网站拒绝请求）
             headers = {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
             }
@@ -494,46 +499,54 @@ async def crawler_hero_word(id: int):
             # 检查请求是否成功（状态码200表示成功）
             response.raise_for_status()  # 若状态码非200，会抛出HTTPError
 
-            # 解析JSON内容（两种方式）
-            # 方式1：使用requests内置的json()方法（推荐，自动处理编码）
+            # 解析JSON内容
             json_data = response.json()
 
-            # 方式2：使用json模块的loads()方法（需先获取文本内容）
-            # json_text = response.text
-            # json_data = json.loads(json_text)
-
             save_path = os.path.join(f"static/json/wzry/voice/", f"{hero_info.hero_name}.json")
-            # 2. 处理保存路径：确保目录存在
-            # 分离目录和文件名（例如："data/json/sample.json" → 目录是"data/json"，文件名是"sample.json"）
+            # 处理保存路径：确保目录存在
             dir_path = os.path.dirname(save_path)
             if dir_path:  # 若目录不为空（即不是当前目录）
                 os.makedirs(dir_path, exist_ok=True)  # 递归创建目录，exist_ok=True避免目录已存在时报错
 
-            # 3. 保存JSON文件（两种方式二选一）
-            # 方式1：保存原始JSON文本（保留服务器返回的原始格式，如缩进、空格）
-            # with open(save_path, "w", encoding="utf-8") as f:
-            #     f.write(response.text)
-
-            # 方式2：保存解析后的Python对象（自动格式化，确保JSON规范，推荐）
+            # 保存解析后的Python对象（自动格式化，确保JSON规范，推荐）
             with open(save_path, "w", encoding="utf-8") as f:
                 json.dump(json_data, f, ensure_ascii=False, indent=2)  # indent=2：格式化缩进，更易读
 
-            print(f"JSON文件已成功保存到：{os.path.abspath(save_path)}")
+            print(f"英雄[{hero_info.hero_name}]JSON文件已成功保存到：{os.path.abspath(save_path)}")
 
             # 获取json_data的dqpfyy_5403属性
             dqpfyy_5403 = json_data.get("dqpfyy_5403")
-            print("dqpfyy_5403", dqpfyy_5403)
+            print(f"英雄[{hero_info.hero_name}]dqpfyy_5403", dqpfyy_5403)
 
             hero_word_list = []
-            if dqpfyy_5403:
+            # 如果dqpfyy_5403是一个列表，则循环处理
+            if isinstance(dqpfyy_5403, list):
+                for words in dqpfyy_5403:
+                    yylbzt_9132 = words.get("yylbzt_9132")
+                    if yylbzt_9132:
+                        for item in yylbzt_9132:
+                            word = item.get("yywbzt_1517")
+                            print(f"英雄[{hero_info.hero_name}]台词：", word)
+                            voice_url = "https:" + item.get("yywjzt_5304")
+                            print(f"英雄[{hero_info.hero_name}]语音链接：", voice_url)
+                            hero_word_list.append({
+                                "hero_id": hero_info.hero_id,
+                                "hero_name": hero_info.hero_name,
+                                "word": word,
+                                "voice_url": voice_url,
+                                "category": "王者荣耀",
+                                "create_time": datetime.now(),
+                                "update_time": datetime.now()
+                            })
+            else:
                 # 获取dqpfyy_5403的属性yylbzt_9132，是一个list
                 yylbzt_9132 = dqpfyy_5403.get("yylbzt_9132")
                 if yylbzt_9132:
                     for item in yylbzt_9132:
                         word = item.get("yywbzt_1517")
-                        print("台词：", word)
+                        print(f"英雄[{hero_info.hero_name}]台词：", word)
                         voice_url = "https:" + item.get("yywjzt_5304")
-                        print("语音链接：", voice_url)
+                        print(f"英雄[{hero_info.hero_name}]语音链接：", voice_url)
                         hero_word_list.append({
                             "hero_id": hero_info.hero_id,
                             "hero_name": hero_info.hero_name,
@@ -544,33 +557,170 @@ async def crawler_hero_word(id: int):
                             "update_time": datetime.now()
                         })
 
-            # 使用 bulk_create 批量插入台词数据
-            if hero_word_list:
-                hero_words = []
-                for word_data in hero_word_list:
-                    hero_words.append(HeroWord(**word_data))
-
-                # 批量插入，每批100条记录
-                await HeroWord.bulk_create(hero_words, batch_size=100)
-                print(f"批量插入{hero_info.hero_name}的台词数据成功，共插入 {len(hero_words)} 条台词数据")
-
-            # 更新爬虫状态
-            await HeroInfo.filter(id=hero_info.id).update(
-                is_crawl=True,
-                update_time=datetime.now()
-            )
-
-            # 休眠1秒
+            # 将结果放入结果队列
+            result_queue.put({
+                'hero': hero_info,
+                'hero_word_list': hero_word_list,
+                'success': True
+            })
+            
+            logger.info(f"英雄语音台词线程 {thread_id} 处理完成: {hero_info.hero_name}")
+            
+            # 控制爬取速度
             time.sleep(1)
+            
         except requests.exceptions.ConnectionError:
-            print("错误：网络连接失败，请检查URL或网络")
+            logger.error(f"英雄语音台词线程 {thread_id} 处理 {hero_info.hero_name} 时发生网络连接错误")
+            result_queue.put({
+                'hero': hero_info,
+                'hero_word_list': [],
+                'success': False,
+                'error': '网络连接失败'
+            })
         except requests.exceptions.Timeout:
-            print("错误：请求超时")
+            logger.error(f"英雄语音台词线程 {thread_id} 处理 {hero_info.hero_name} 时发生请求超时")
+            result_queue.put({
+                'hero': hero_info,
+                'hero_word_list': [],
+                'success': False,
+                'error': '请求超时'
+            })
         except requests.exceptions.HTTPError as e:
-            print(f"错误：请求失败，状态码：{e.response.status_code}")
+            logger.error(f"英雄语音台词线程 {thread_id} 处理 {hero_info.hero_name} 时发生HTTP错误: {e.response.status_code}")
+            result_queue.put({
+                'hero': hero_info,
+                'hero_word_list': [],
+                'success': False,
+                'error': f'请求失败，状态码：{e.response.status_code}'
+            })
         except json.JSONDecodeError:
-            print("错误：JSON格式无效，无法解析")
+            logger.error(f"英雄语音台词线程 {thread_id} 处理 {hero_info.hero_name} 时发生JSON解析错误")
+            result_queue.put({
+                'hero': hero_info,
+                'hero_word_list': [],
+                'success': False,
+                'error': 'JSON格式无效，无法解析'
+            })
         except Exception as e:
-            print(f"发生未知错误：{e}")
+            logger.error(f"英雄语音台词线程 {thread_id} 处理 {hero_info.hero_name} 时发生未知错误: {e}", exc_info=True)
+            result_queue.put({
+                'hero': hero_info,
+                'hero_word_list': [],
+                'success': False,
+                'error': f'发生未知错误：{e}'
+            })
+        finally:
+            queue.task_done()
 
-    return {"message": "爬取完成"}
+
+def background_hero_word_task(hero_list, thread_count):
+    """后台总控任务：创建队列和爬虫线程，分配英雄语音台词爬取任务"""
+    logger.info(f"开始后台英雄语音台词爬虫任务，共 {len(hero_list)} 个英雄，使用 {thread_count} 个线程")
+
+    # 创建任务队列
+    task_queue = queue.Queue()
+    result_queue = queue.Queue()
+    
+    for hero in hero_list:
+        task_queue.put(hero)
+
+    # 启动爬虫线程
+    threads = []
+    for i in range(thread_count):
+        t = threading.Thread(
+            target=hero_word_worker,
+            args=(task_queue, i, result_queue),
+            name=f"HeroWord-{i}"
+        )
+        t.start()
+        threads.append(t)
+
+    # 等待所有任务处理完成
+    task_queue.join()
+    logger.info("所有英雄语音台词爬取完成")
+
+    # 发送结束信号给所有线程
+    for _ in range(thread_count):
+        task_queue.put(None)
+
+    # 等待所有线程退出
+    for t in threads:
+        t.join()
+        
+    # 收集所有结果
+    results = []
+    while not result_queue.empty():
+        results.append(result_queue.get())
+        
+    logger.info("所有英雄语音台词爬虫线程已退出，后台任务结束")
+    
+    return results
+
+
+@wzry_api.get("/crawler/heroWord")
+async def crawler_hero_word(id: int):
+    """
+    爬取英雄语音台词(多线程版本)
+    """
+    hero_info_list = await HeroInfo.filter(is_crawl=False, category="王者荣耀", id__lt=id)
+    print(f'待爬取英雄数量：{len(hero_info_list)}')
+    if not hero_info_list:
+        return {
+            "message": "没有待爬取英雄"
+        }
+
+    # 在后台线程中执行爬虫任务
+    async def run_hero_word_crawler_in_thread():
+        results = background_hero_word_task(hero_info_list, 3)
+        # 在这里执行数据库操作，使用 await 方式
+        
+        success_count = 0
+        failed_count = 0
+        
+        # 处理每个英雄的结果
+        for result in results:
+            hero = result['hero']
+            hero_word_list = result['hero_word_list']
+            
+            if result['success']:
+                try:
+                    # 使用 bulk_create 批量插入台词数据
+                    if hero_word_list:
+                        hero_words = []
+                        for word_data in hero_word_list:
+                            hero_words.append(HeroWord(**word_data))
+
+                        # 批量插入，每批100条记录
+                        await HeroWord.bulk_create(hero_words, batch_size=100)
+                        print(f"批量插入{hero.hero_name}的台词数据成功，共插入 {len(hero_words)} 条台词数据")
+
+                    # 更新爬虫状态
+                    await HeroInfo.filter(id=hero.id).update(
+                        is_crawl=True,
+                        update_time=datetime.now()
+                    )
+                    
+                    success_count += 1
+                    print(f"英雄[{hero.hero_name}]语音台词数据处理成功")
+                except Exception as e:
+                    failed_count += 1
+                    print(f"处理英雄[{hero.hero_name}]台词数据时发生数据库错误: {e}")
+            else:
+                failed_count += 1
+                print(f"处理英雄[{hero.hero_name}]台词数据失败: {result['error']}")
+
+        print(f"英雄语音台词爬取完成，成功: {success_count}，失败: {failed_count}")
+        
+    # 在现有的事件循环中创建任务
+    loop = asyncio.get_event_loop()
+    loop.create_task(run_hero_word_crawler_in_thread())
+
+    return {
+        "status": "success",
+        "message": "英雄语音台词爬虫任务已在后台启动",
+        "task_info": {
+            "hero_count": len(hero_info_list),
+            "thread_count": 3
+        }
+    }
+
