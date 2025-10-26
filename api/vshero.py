@@ -1,13 +1,14 @@
-from orm.models import HeroInfo, HeroSkin
+from datetime import datetime
 
 from fastapi import APIRouter
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from datetime import datetime
+from selenium.webdriver.support.ui import WebDriverWait
+from bs4 import BeautifulSoup
 
+from orm.models import HeroInfo
 
 vshero_api = APIRouter()
 
@@ -92,4 +93,63 @@ async def crawler_heros():
         "message": "爬取完成",
         "inserted_count": inserted_count,
         "updated_count": updated_count
+    }
+
+
+@vshero_api.get("/parse/hero-list-html")
+async def parse_hero_list_html():
+    """
+    解析曙光英雄列表HTML
+    """
+    # 1. 读取本地HTML文件
+    html_path = "static/htmls/vshero-list.html"  # 本地HTML文件路径（相对路径或绝对路径）
+    with open(html_path, "r", encoding="utf-8") as f:  # 指定encoding避免中文乱码
+        html_content = f.read()  # 读取文件内容
+
+    # 2. 解析HTML
+    soup = BeautifulSoup(html_content, "lxml")  # 使用lxml解析器（也可替换为"html.parser"）
+
+    # 3. 获取元素列表并提取内容
+    # 提取div.hero-list下的所有a元素
+    hero_a_list = soup.select("div.hero-list a")  # 用CSS选择器定位元素列表
+    print(f'英雄列表数量：{len(hero_a_list)}')
+
+    for a_ele in hero_a_list:
+        # 获取a_ele中的href 例：https://www.vshero.cn/#/hero/381
+        hero_detail_url = f"https://www.vshero.cn/{a_ele.attrs["href"]}"
+        print(f'英雄详情链接：{hero_detail_url}')
+
+        # 获取英雄详情url中的英雄id
+        hero_id = hero_detail_url.split("/")[-1]
+
+        hero_name = a_ele.find("div", class_="name").text
+        print(f'英雄名称：{hero_name}')
+
+        a_ele_img = a_ele.find("img")
+        hero_avatar_src = "https:" + a_ele_img.attrs["src"]
+        print(f'英雄头像链接：{hero_avatar_src}')
+
+        # 判断是否已存在该英雄
+        hero_obj = await HeroInfo.get_or_none(hero_name=hero_name, category="曙光英雄")
+        if hero_obj is None:
+            await HeroInfo.create(
+                hero_id=hero_id,
+                hero_name=hero_name,
+                hero_detail_url=hero_detail_url,
+                hero_profile_url=hero_avatar_src,
+                create_time=datetime.now(),
+                update_time=datetime.now(),
+                category="曙光英雄"
+            )
+            print(f'新增英雄：{hero_name}')
+        else:
+            hero_obj.hero_detail_url = hero_detail_url
+            hero_obj.hero_profile_url = hero_avatar_src
+            hero_obj.update_time = datetime.now()
+            await hero_obj.save()
+            print(f'更新英雄：{hero_name}')
+
+    return {
+        "message": "解析完成",
+        "hero-count": len(hero_a_list)
     }
